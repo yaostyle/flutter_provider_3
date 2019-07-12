@@ -40,17 +40,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ExampleLocalizations {
-  static ExampleLocalizations of(BuildContext context) =>
-      Localizations.of<ExampleLocalizations>(context, ExampleLocalizations);
-
-  const ExampleLocalizations(this._count);
-
-  final int _count;
-
-  String get title => 'Tapped $_count times';
-}
-
 class _ExampleLocalizationsDelegate
     extends LocalizationsDelegate<ExampleLocalizations> {
   const _ExampleLocalizationsDelegate(this.count);
@@ -124,4 +113,15 @@ class Title extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(ExampleLocalizations.of(context).title);
   }
+}
+
+class ExampleLocalizations {
+  static ExampleLocalizations of(BuildContext context) =>
+      Localizations.of<ExampleLocalizations>(context, ExampleLocalizations);
+
+  const ExampleLocalizations(this._count);
+
+  final int _count;
+
+  String get title => 'Tapped $_count times';
 }
